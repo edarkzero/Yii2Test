@@ -1,6 +1,7 @@
 <?php
 $config = [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
+    'language' => 'es-LA',
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -26,6 +27,18 @@ $config = [
                 'password' => '101010101010',
                 'port' => '587',
                 'encryption' => 'tls',
+            ],
+        ],
+        'i18n' => [
+            'translations' => [
+                'frontend*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                ],
+                'backend*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                ],
             ],
         ],
         /*'urlManager' => [
