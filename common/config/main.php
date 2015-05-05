@@ -8,7 +8,7 @@ $config = [
         ],
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=test;port=3307;',
+            'dsn' => 'mysql:host=localhost;dbname=test;port=3306;',
             'username' => 'root',
             'password' => '123456',
             'charset' => 'utf8',
@@ -36,6 +36,10 @@ $config = [
                     'basePath' => '@common/messages',
                 ],
                 'backend*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                ],
+                'app*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@common/messages',
                 ],
