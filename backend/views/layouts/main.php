@@ -34,6 +34,12 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
+                ['label' => 'Gente',
+                'items' => [
+                        ['label' => 'Index', 'url' => ['/gente/index',['id' => 1]]],
+                        ['label' => 'Create', 'url' => ['/gente/create']],
+                    ]
+                ],
                 ['label' => 'Frontend', 'url' => Yii::$app->params['frontendUrl']]
             ];
             if (Yii::$app->user->isGuest) {
