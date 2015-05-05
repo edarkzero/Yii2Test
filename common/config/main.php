@@ -7,9 +7,9 @@ $config = [
         ],
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=test',
+            'dsn' => 'mysql:host=localhost;dbname=test;port=3307;',
             'username' => 'root',
-            'password' => '',
+            'password' => '123456',
             'charset' => 'utf8',
         ],
         'mailer' => [
@@ -23,7 +23,7 @@ $config = [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.gmail.com',
                 'username' => 'edgarcardona87@gmail.com',
-                'password' => '1010060887zero1010',
+                'password' => '101010101010',
                 'port' => '587',
                 'encryption' => 'tls',
             ],
