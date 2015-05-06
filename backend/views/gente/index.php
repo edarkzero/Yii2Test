@@ -67,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'header' => '<h2>Hello world</h2>',
         'size' => Modal::SIZE_LARGE,
         'clientEvents' => [
-            'shown.bs.modal' => new JsExpression('function(e){sayHi();}'),
+            'shown.bs.modal' => new JsExpression('function(e){setForm(e);}'),
             'hidden.bs.modal' => new JsExpression('function(e){resetForm("#'.$model->getCreateForm().'");}')
         ]
     ]);
