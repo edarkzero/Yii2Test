@@ -30,7 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'gender',
+            [
+                'label' => $model->getAttributeLabel('gender'),
+                'value' => $model->getGenderData()
+            ]
         ],
     ]) ?>
 

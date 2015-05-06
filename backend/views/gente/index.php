@@ -5,6 +5,7 @@ use yii\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\GenteSearch */
+/* @var $genders array */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('app', 'Gentes');
@@ -25,9 +26,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'name',
-            'gender',
+            [
+                'attribute' => 'gender',
+                'value' => function ($model){
+                    return $model->getGenderData();
+                },
+                'filter' => $genders
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

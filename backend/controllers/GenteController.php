@@ -34,11 +34,13 @@ class GenteController extends Controller
     public function actionIndex()
     {
         $searchModel = new GenteSearch();
+        $genders = $searchModel->getGenderData();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'genders' => $genders
         ]);
     }
 
@@ -62,12 +64,13 @@ class GenteController extends Controller
     public function actionCreate()
     {
         $model = new Gente();
-
+        $genders = $model->getGenderData();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'genders' => $genders
             ]);
         }
     }
@@ -81,12 +84,14 @@ class GenteController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $genders = $model->getGenderData();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'genders' => $genders
             ]);
         }
     }

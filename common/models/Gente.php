@@ -45,4 +45,23 @@ class Gente extends \yii\db\ActiveRecord
             'gender' => Yii::t('app', 'Gender'),
         ];
     }
+
+    /**
+     * @return array
+     *
+     */
+    public function getGenderData()
+    {
+        $data = [0=>Yii::t('app','Male'),1=>Yii::t('app','Female')];
+
+        if(!isset($this->gender))
+            return $data;
+        else
+        {
+            if(isset($data[$this->gender]))
+                return $data[$this->gender];
+            else
+                return null;
+        }
+    }
 }

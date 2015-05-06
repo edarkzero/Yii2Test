@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Gente */
+/* @var $genders array */
 
 $this->title = Yii::t('app', 'Update {modelClass}: ', [
     'modelClass' => 'Gente',
@@ -18,6 +19,7 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 
     <?= $this->render('_form', [
         'model' => $model,
+        'genders' => $genders
     ]) ?>
 
 </div>

@@ -56,7 +56,6 @@ class GenteSearch extends Gente
         }
 
         $query->andFilterWhere([
-            'id' => $this->id,
             'gender' => $this->gender,
         ]);
 
