@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="gente-form">
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['id' => $model->getCreateForm()]); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => 255]) ?>
 

@@ -33,11 +33,13 @@ class GenteController extends Controller
      */
     public function actionIndex()
     {
+        $model = new Gente();
         $searchModel = new GenteSearch();
         $genders = $searchModel->getGenderData(true);
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'model' => $model,
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'genders' => $genders

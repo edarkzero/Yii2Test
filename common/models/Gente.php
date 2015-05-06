@@ -13,6 +13,11 @@ use Yii;
  */
 class Gente extends \yii\db\ActiveRecord
 {
+    private $modalCreateForm = 'modal-ajax-create';
+    private $createForm = 'create-form';
+    private $modalUpdateForm = 'modal-ajax-update';
+    private $updateForm = 'update-form';
+
     /**
      * @inheritdoc
      */
@@ -63,5 +68,37 @@ class Gente extends \yii\db\ActiveRecord
             else
                 return null;
         }
+    }
+
+    /**
+     * @return string
+     */
+    public function getModalCreateForm()
+    {
+        return self::tableName().$this->modalCreateForm;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreateForm()
+    {
+        return self::tableName().$this->createForm;
+    }
+
+    /**
+     * @return string
+     */
+    public function getModalUpdateForm()
+    {
+        return self::tableName().$this->modalUpdateForm;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUpdateForm()
+    {
+        return self::tableName().$this->updateForm;
     }
 }

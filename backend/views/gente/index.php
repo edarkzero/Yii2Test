@@ -4,9 +4,12 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use backend\assets\GenteAsset;
+use yii\bootstrap\Modal;
+use yii\web\JsExpression;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\GenteSearch */
+/* @var $model common\models\Gente */
 /* @var $genders array */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
@@ -48,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'delete',
                     'test' => function ($url, $model, $key) {
                         $span = Html::tag('span','',['class' => 'glyphicon glyphicon-asterisk']);
-                        return Html::a($span,'#',['title' => Yii::t('app','Test'),'data-id' => $key]);
+                        return Html::a($span,'#',['title' => Yii::t('app','Test'),'data-id' => $key,'data-toggle' => 'modal','data-target' => '#'.$model->getModalCreateForm()]);
                     }
                 ],
             ],
@@ -57,3 +60,22 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php Pjax::end(); ?>
 
 </div>
+
+<?php
+    Modal::begin([
+        'id' => $model->getModalCreateForm(),
+        'header' => '<h2>Hello world</h2>',
+        'size' => Modal::SIZE_LARGE,
+        'clientEvents' => [
+            'shown.bs.modal' => new JsExpression('function(e){sayHi();}'),
+            'hidden.bs.modal' => new JsExpression('function(e){resetForm("#'.$model->getCreateForm().'");}')
+        ]
+    ]);
+
+    echo $this->render('_form', [
+        'model' => $model,
+        'genders' => $genders
+    ]);
+
+    Modal::end();
+?>
