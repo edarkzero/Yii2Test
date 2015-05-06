@@ -14,6 +14,7 @@ use yii\web\JsExpression;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 GenteAsset::register($this);
+
 $this->title = Yii::t('app', 'Gentes');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
