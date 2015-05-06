@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             [
                 'label' => $model->getAttributeLabel('gender'),
-                'value' => $model->getGenderData()
+                'value' => $model->getGenderData(false)
             ]
         ],
     ]) ?>

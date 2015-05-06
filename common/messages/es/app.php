@@ -17,6 +17,8 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Female' => 'Mujer',
+    'Male' => 'Hombre',
     'Are you sure you want to delete this item?' => '¿Seguro que quieres borrar este elemento?',
     'Create' => 'Crear',
     'Create Gente' => 'Crear Gente',

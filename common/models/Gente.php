@@ -50,11 +50,11 @@ class Gente extends \yii\db\ActiveRecord
      * @return array
      *
      */
-    public function getGenderData()
+    public function getGenderData($all = false)
     {
         $data = [0=>Yii::t('app','Male'),1=>Yii::t('app','Female')];
 
-        if(!isset($this->gender))
+        if($all)
             return $data;
         else
         {

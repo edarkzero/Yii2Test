@@ -34,7 +34,7 @@ class GenteController extends Controller
     public function actionIndex()
     {
         $searchModel = new GenteSearch();
-        $genders = $searchModel->getGenderData();
+        $genders = $searchModel->getGenderData(true);
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -64,7 +64,7 @@ class GenteController extends Controller
     public function actionCreate()
     {
         $model = new Gente();
-        $genders = $model->getGenderData();
+        $genders = $model->getGenderData(true);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -84,7 +84,7 @@ class GenteController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $genders = $model->getGenderData();
+        $genders = $model->getGenderData(true);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
