@@ -22,9 +22,9 @@ $config = [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => 'edgarcardona87@gmail.com',
-                'password' => '101010101010',
+                'host' => 'mail.onbizz.com',
+                'username' => 'test@onbizz.com',
+                'password' => 'aia45-7',
                 'port' => '587',
                 'encryption' => 'tls',
             ],
