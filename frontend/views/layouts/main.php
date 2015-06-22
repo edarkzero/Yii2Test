@@ -36,6 +36,7 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
+                ['label' => 'Angular', 'url' => ['/site/angular']],
                 ['label' => 'About', 'url' => ['/site/about']],
                 ['label' => 'Contact', 'url' => ['/site/contact']],
                 ['label' => 'Backend', 'url' => Yii::$app->params['backendUrl']],

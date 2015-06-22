@@ -111,6 +111,11 @@ class SiteController extends Controller
         }
     }
 
+    public function actionAngular()
+    {
+        return $this->render('angular');
+    }
+
     public function actionAbout()
     {
         return $this->render('about');
