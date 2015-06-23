@@ -18,9 +18,12 @@ class AngularAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'css\site\angularTest.css'
     ];
     public $js = [
-        'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js'
+        'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js',
+        'js\site\angularComponents.js',
+        'js\site\angularTest.js'
     ];
     public $depends = [
         'frontend\assets\AppAsset',
