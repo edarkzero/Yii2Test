@@ -22,8 +22,8 @@ class AngularAsset extends AssetBundle
     ];
     public $js = [
         'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js',
-        'js\site\angularComponents.js',
-        'js\site\angularTest.js'
+        'js\site\angularTest.js',
+        'js\site\angularComponents.js'
     ];
     public $depends = [
         'frontend\assets\AppAsset',
